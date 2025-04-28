@@ -1,5 +1,14 @@
 SRC         = ft_printf.c \
-              p_builtins.c 
+              p_builtins.c \
+			  handler_base10.c \
+			  handler_chr.c \
+			  handler_percent.c \
+			  handler_pointer.c \
+			  handler_string.c \
+			  handler_unsigned.c \
+			  handler_upper_hex.c \
+			  handler_lower_hex.c 
+
 LIB         = libft.a
 
 PRE         = ./srcs/
@@ -10,10 +19,11 @@ LIBS        = ${addprefix ${PRELIB}, ${LIB}}
 OBJS        = ${SRCS:.c=.o}
 
 HEAD        = -I./includes/ -I./libft/
-NAME        = printf 
+NAME        = printf.a
 
 GCC         = cc
-CFLAGS      = -Wall -Wextra -Werror -g #-fsanitize=undefined 
+AR          = ar rcs
+CFLAGS      = -Wall -Wextra -Werror -g
 RM          = rm -f
 
 all: ${NAME}
@@ -22,7 +32,7 @@ all: ${NAME}
 	${GCC} ${CFLAGS} -c ${HEAD} $< -o ${<:.c=.o}
 
 ${NAME}: ${LIBS} ${OBJS}
-	${GCC} ${CFLAGS} ${OBJS} -I ${HEAD} -I ./libft -L ./libft -lft -o ${NAME}
+	${AR} ${NAME} ${OBJS}
 
 ${LIBS}:
 	make -C ${PRELIB} bonus
