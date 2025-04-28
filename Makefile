@@ -13,7 +13,7 @@ HEAD        = -I./includes/ -I./libft/
 NAME        = printf 
 
 GCC         = cc
-CFLAGS      = -Wall -Wextra -Werror -g -fsanitize=undefined 
+CFLAGS      = -Wall -Wextra -Werror -g #-fsanitize=undefined 
 RM          = rm -f
 
 all: ${NAME}

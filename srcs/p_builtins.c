@@ -64,7 +64,7 @@ void handler_pointer(va_list *ap)
 	else
 	{
 		ft_putstr("0x");
-		ft_putnbr_hex((unsigned long)ptr, 'x');
+		ft_putnbr_hex_ulong((unsigned long)ptr, 'x');
 	}
 }
 

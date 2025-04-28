@@ -1,7 +1,7 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # define PRINT_CHRS "cspdiuxX%"
-# define N_SPECS    (sizeof(PRINT_CHRS) - 1)
+# define N_SPECS    (sizeof(PRINT_CHRS))
 
 #include <stdarg.h>
 
