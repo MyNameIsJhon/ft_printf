@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 23:22:50 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 13:48:42 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/28 14:45:28 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,15 @@ void	ft_printf(char *str, ...)
 		str = print_next_to(str, "%");
 		if (!str || !*str)
 			break ;
-		str++;
+		str++; 
 		ptr = ft_strchr(p_ask, *str);
-		if (*str && ptr)
+		if (ptr)
 		{
 			diff = ptr - p_ask;
 			handler_func[diff](&elements);
 		}
-		str++;
+		if (*str)
+			str++;
 	}
 	va_end(elements);
 }
