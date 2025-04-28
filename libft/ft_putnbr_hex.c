@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:07:50 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 15:40:03 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/28 16:58:18 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_hex(unsigned int n, char format)
 {
-	char *base;
+	char	*base;
 
 	if (format == 'X')
 		base = "0123456789ABCDEF";

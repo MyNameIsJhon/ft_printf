@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 15:50:24 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 15:59:19 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/28 16:52:03 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	handler_string(va_list *ap)
 {
-	char *str = va_arg(*ap, char*);
+	char	*str;
 
+	str = va_arg(*ap, char *);
 	if (!str)
 		ft_putstr("(null)");
 	else

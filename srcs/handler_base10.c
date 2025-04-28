@@ -14,7 +14,8 @@
 
 void	handler_base10(va_list *ap)
 {
-	int nb = va_arg(*ap, int);
+	int	nb;
+
+	nb = va_arg(*ap, int);
 	ft_putnbr(nb);
 }
-

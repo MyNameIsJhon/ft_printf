@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 23:22:50 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 15:46:37 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/28 16:55:10 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <stdarg.h>
 #include <limits.h>
 
-char *ft_strchr_charset(char *str, char *charset)
+char	*ft_strchr_charset(char *str, char *charset)
 {
 	while (!ft_ischarset(*str, charset) && *str)
 		str++;
@@ -27,23 +27,23 @@ char *ft_strchr_charset(char *str, char *charset)
 	return (str);
 }
 
-char *print_next_to(char *str, char *charset)
+char	*print_next_to(char *str, char *charset)
 {
-    char    *cp;
-    ptrdiff_t diff;
+	char		*cp;
+	ptrdiff_t	diff;
 
-    if (!str || !charset)
-        return str;
-    cp = ft_strchr_charset(str, charset);
-    if (!cp)
+	if (!str || !charset)
+		return (str);
+	cp = ft_strchr_charset(str, charset);
+	if (!cp)
 	{
-        diff = ft_strlen(str);
-        write(1, str, diff);
-        return str + diff;
-    }
-    diff = cp - str;
-    write(1, str, diff);
-    return cp;
+		diff = ft_strlen(str);
+		write(1, str, diff);
+		return (str + diff);
+	}
+	diff = cp - str;
+	write(1, str, diff);
+	return (cp);
 }
 
 void	ft_printf(char *str, ...)
@@ -53,7 +53,7 @@ void	ft_printf(char *str, ...)
 	char		p_ask[N_SPECS + 2];
 	char		*ptr;
 	ptrdiff_t	diff;
-	
+
 	va_start(elements, str);
 	printf_init(handler_func, p_ask);
 	while (*str)
@@ -61,7 +61,7 @@ void	ft_printf(char *str, ...)
 		str = print_next_to(str, "%");
 		if (!str || !*str)
 			break ;
-		str++; 
+		str++;
 		ptr = ft_strchr(p_ask, *str);
 		if (ptr)
 		{

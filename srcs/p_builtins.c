@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 15:59:47 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 16:07:04 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/28 17:02:54 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 void	printf_init(void (*handler_func[])(va_list *ap), char *p_ask)
 {
-	/* # define PRINT_CHRS "cspdiuxX%" */
 	handler_func[0] = handler_chr;
 	handler_func[1] = handler_string;
 	handler_func[2] = handler_pointer;
@@ -28,6 +27,5 @@ void	printf_init(void (*handler_func[])(va_list *ap), char *p_ask)
 	handler_func[7] = handler_upper_hex;
 	handler_func[8] = handler_percent;
 	handler_func[9] = NULL;
-
 	ft_strlcpy(p_ask, PRINT_CHRS, N_SPECS);
 }

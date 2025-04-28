@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:59:32 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 11:28:21 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/28 17:10:24 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr(int nb)
 {
-	long int full;
+	long int	full;
 
 	full = nb;
 	if (nb < 0)

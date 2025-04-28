@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 16:00:19 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 16:00:50 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/28 16:50:30 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	handler_unsigned(va_list *ap)
 {
-	unsigned int nb = va_arg(*ap, unsigned int);
+	unsigned int	nb;
+
+	nb = va_arg(*ap, unsigned int);
 	ft_putnbr_unsigned(nb);
 }

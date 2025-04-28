@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:28:41 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 12:41:57 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/28 17:09:50 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,3 @@ void	ft_putnbr_unsigned(unsigned int n)
 		ft_putnbr_unsigned(n / 10);
 	ft_putchar((n % 10) + '0');
 }
-
