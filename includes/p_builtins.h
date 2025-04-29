@@ -6,14 +6,14 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 17:00:35 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 17:11:49 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/29 08:46:09 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef P_BUILTINS_H
 # define P_BUILTINS_H
 # define PRINT_CHRS "cspdiuxX%"
-# define N_SPECS    (sizeof(PRINT_CHRS))
+# define N_SPECS 9
 
 # include <stdarg.h>
 # include "libft.h"
