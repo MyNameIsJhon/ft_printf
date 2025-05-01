@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handler_string.c                                   :+:      :+:    :+:   */
+/*   ft_hexlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 15:50:24 by jriga             #+#    #+#             */
-/*   Updated: 2025/05/01 15:16:42 by jriga            ###   ########.fr       */
+/*   Created: 2025/04/30 15:04:21 by jriga             #+#    #+#             */
+/*   Updated: 2025/04/30 15:05:09 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "libft.h"
-
-int	handler_string(va_list *ap)
+int ft_hexlen(unsigned int n)
 {
-	char	*str;
+    int length;
 
-	str = va_arg(*ap, char *);
-	if (!str)
-	{
-		ft_putstr("(null)");
-		return (0);
-	}
-	else
-		ft_putstr(str);
-	return (ft_strlen(str));
+	length = 1;
+    while (n >= 16) {
+        n /= 16;
+        length++;
+    }
+    return length;
 }

@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 09:38:23 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 17:12:39 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/30 15:12:10 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,9 @@ char	**ft_split_charset(char *str, char *charset);
 void	freestrs(char **strs, size_t count);
 void	ft_putstr(const char *str);
 void	ft_putnbr_hex_ulong(unsigned long long n, char format);
+int		ft_nbrlen(int nb);
+int		ft_hexlen(unsigned int n);
+int ft_hexlen_l(unsigned long n);
+int	ft_nbrlen_u(unsigned int nb);
 
 #endif

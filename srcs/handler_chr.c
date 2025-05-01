@@ -6,16 +6,18 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 16:14:34 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 16:35:11 by jriga            ###   ########.fr       */
+/*   Updated: 2025/04/29 09:45:53 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "p_builtins.h"
+#include <stdarg.h>
+#include "libft.h"
 
-void	handler_chr(va_list *ap)
+int	handler_chr(va_list *ap)
 {
 	char	c;
 
 	c = (char)va_arg(*ap, int);
 	ft_putchar(c);
+	return 1;
 }

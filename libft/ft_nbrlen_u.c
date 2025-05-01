@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handler_string.c                                   :+:      :+:    :+:   */
+/*   ft_nbrlen_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 15:50:24 by jriga             #+#    #+#             */
-/*   Updated: 2025/05/01 15:16:42 by jriga            ###   ########.fr       */
+/*   Created: 2025/04/30 15:11:28 by jriga             #+#    #+#             */
+/*   Updated: 2025/04/30 15:11:50 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "libft.h"
-
-int	handler_string(va_list *ap)
+int	ft_nbrlen_u(unsigned int nb)
 {
-	char	*str;
+	int	i;
 
-	str = va_arg(*ap, char *);
-	if (!str)
+	if (nb == 0)
+		return (1);
+	i = 0;
+	while (nb != 0)
 	{
-		ft_putstr("(null)");
-		return (0);
+		nb /= 10;
+		i++;
 	}
-	else
-		ft_putstr(str);
-	return (ft_strlen(str));
+	return (i);
 }

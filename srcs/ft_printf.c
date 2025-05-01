@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 23:22:50 by jriga             #+#    #+#             */
-/*   Updated: 2025/04/28 16:55:10 by jriga            ###   ########.fr       */
+/*   Updated: 2025/05/01 15:19:16 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,51 +27,55 @@ char	*ft_strchr_charset(char *str, char *charset)
 	return (str);
 }
 
-char	*print_next_to(char *str, char *charset)
+int	print_next_to(char **str, char *charset)
 {
-	char		*cp;
-	ptrdiff_t	diff;
+	char	*cp;
+	int		diff;
 
-	if (!str || !charset)
-		return (str);
-	cp = ft_strchr_charset(str, charset);
+	if (!str || !charset || !*str)
+		return (0);
+	cp = ft_strchr_charset(*str, charset);
 	if (!cp)
 	{
-		diff = ft_strlen(str);
-		write(1, str, diff);
-		return (str + diff);
+		diff = ft_strlen(*str);
+		write(1, *str, diff);
+		*str += diff;
+		return (diff);
 	}
-	diff = cp - str;
-	write(1, str, diff);
-	return (cp);
+	diff = cp - *str;
+	write(1, *str, diff); 
+	*str = cp;
+	return (diff);
 }
 
-void	ft_printf(char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list		elements;
-	void		(*handler_func[N_SPECS + 2])(va_list *ap);
+	int			(*handler_func[N_SPECS + 2])(va_list *ap);
 	char		p_ask[N_SPECS + 2];
 	char		*ptr;
 	ptrdiff_t	diff;
+	int			len;
 
 	va_start(elements, str);
 	printf_init(handler_func, p_ask);
+	len = 0;
 	while (*str)
 	{
-		str = print_next_to(str, "%");
+		len += print_next_to((char **)&str, "%");
 		if (!str || !*str)
-			break ;
+			break;
 		str++;
 		ptr = ft_strchr(p_ask, *str);
 		if (ptr)
 		{
 			diff = ptr - p_ask;
-			handler_func[diff](&elements);
+			len += handler_func[diff](&elements);
+			str++; // déplace ici seulement en cas de spec valide
 		}
-		if (*str)
-			str++;
 	}
 	va_end(elements);
+	return (len);
 }
 
 /* int main(void) */
