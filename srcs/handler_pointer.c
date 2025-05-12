@@ -20,7 +20,7 @@ int	handler_pointer(va_list *ap)
 	ptr = va_arg(*ap, void *);
 	if (!ptr)
 	{
-		ft_putstr("0x0");
+		ft_putstr("(nil)");
 		return (3);
 	}
 	ft_putstr("0x");
